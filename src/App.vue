@@ -22,7 +22,16 @@ export default {
     Header,
     Content
   },
+  created () {
+    window.addEventListener('keyup', this.keypress)
+  },
   methods: {
+    keypress (e) {
+      console.log(e)
+      if (e.key === 't') {
+        this.toggle()
+      }
+    },
     toggle () {
       if (this.mode === 'dark') {
         this.mode = 'light'
